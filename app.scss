@@ -1,0 +1,340 @@
+//
+$fondCouleur: #444444;
+
+$danger: #FF5735;
+$warning: #E2B100;
+$info: #02A9CE;
+$succes: #E1F5B8;
+
+$timing: 150ms;
+$menu-ecriture: #ffffff;
+$gris-fonce: #222222;
+$vert-clair : #E1F5B8;
+$vert-fonce: #0D723F;
+$rose-clair: #FFF4F1;
+$rouge: #F53603;
+
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+* {
+    scroll-behavior: smooth;
+}
+
+
+html,
+body {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    line-height: 1.2;
+    text-align: center;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: rift-soft, sans-serif;
+}
+h1 {
+    font-size: 90px;
+}
+h1.contact {
+    font-size: 85px;
+    color: $rouge;
+}
+h2 {
+    margin-top: 3rem;
+    font-size: 40px;
+    color: $rouge;
+}
+h2:first-child {
+    margin-top: 0;
+}
+a {
+    color: $rouge;
+    &:hover {
+        color: $rouge;
+        text-decoration: underline;
+    }
+}
+.navbar {
+    display: block;
+}
+.navbar-brand {
+    display: block;
+    font-size: 90px;
+    color: $rouge;
+    text-align: center;
+}
+.navbar-brand:hover {
+    color: $rouge;
+}
+a:-webkit-any-link:focus-visible,
+a:focus-visible,
+.btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgb($rouge, 25%);
+    outline-color: $rouge;
+    outline: 1px solid $rouge;
+}
+.btn-primary:focus {
+    background-color: $rouge;
+    border-color: $rouge;
+}
+
+.contenu {
+    background-color: #fff;
+}
+.bg-rose {
+    background-color: $rose-clair;
+}
+.nav-tabs {
+    border: none;
+}
+.nav-tabs .nav-link {
+    border: none;
+    transition: $timing;
+}
+.nav-tabs .nav-link:hover {
+    background-color: $rose-clair
+}
+.nav-tabs .nav-item .nav-link {
+    font-family: rift-soft, sans-serif;
+    font-size: 24px;
+    @media (max-width: 768px) {
+        font-size: 20px;
+    }
+}
+@media (max-width: 768px) {
+    .nav-link {
+        padding: 0.5rem;
+    }
+}
+.nav-tabs .nav-item .nav-link.active {
+    background-color: $rose-clair;
+}
+.nav-tabs .nav-link.active {
+    color: $danger;
+}
+.tab-content {
+    background-color: $rose-clair;
+}
+
+.text-boutons .btn {
+    padding: 0.2rem;
+}
+
+
+.alert-success {
+    color: $vert-fonce;
+    background-color: $vert-clair;
+    border-color: $vert-clair;
+}
+
+
+// Bouton roud rouge accueil
+.bottom {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    transition: $timing;
+    border: 1px solid $rouge;
+    background-color: $rose-clair;
+}
+.bottom:hover {
+    background-color: $rouge;
+}
+.bottom:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    transition: $timing;
+    border-right: 2px solid $rouge;
+    border-bottom: 2px solid $rouge;
+    transform: translate(-50%, -50%) rotate(45deg);
+    transform-origin: center center;
+    margin-top: 0px;
+    animation: toBottom1 1s infinite;
+}
+.bottom:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    transition: $timing;
+    border-right: 2px solid $rouge;
+    border-bottom: 2px solid $rouge;
+    transform: translate(-50%, -50%) rotate(45deg);
+    transform-origin: center center;
+    margin-top: -10px;
+    animation: toBottom2 1s infinite;
+}
+.bottom:hover:before,
+.bottom:hover:after {
+    border-color: $rose-clair;
+    animation-play-state: paused;
+}
+@keyframes toBottom1 {
+    0% { margin-top: -2px; }
+    100% { margin-top: 2px; }
+}
+@keyframes toBottom2 {
+    0% { margin-top: -12px; }
+    100% { margin-top: -8px; }
+}
+// FIN bouton roud rouge accueil
+
+
+textarea.form-control.hxxx {
+    height: 350px;
+}
+.form-control {
+    border-radius: 0;
+    border-color: $gris-fonce;
+    color: $gris-fonce;
+}
+.form-control:focus {
+    border-color: $rouge;
+    box-shadow: 0 0 0 0.2rem rgb($rouge, 25%);
+}
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus {
+    box-shadow: 0 0 0 0.2rem rgb($rouge, 25%);
+}
+.btn-primary {
+    border-radius: 0;
+    background-color: $rouge;
+    border-color: $rouge;
+    text-transform: uppercase;
+}
+.btn-group>.btn:focus,
+.btn-group>.btn:active,
+.btn-group>.btn.active,
+.btn-group-vertical>.btn:focus,
+.btn-group-vertical>.btn:active,
+.btn-group-vertical>.btn.active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled).active,
+.show>.btn-primary.dropdown-toggle,
+.btn-primary:hover {
+    color: $rouge;
+    background-color: $rose-clair;
+    border-color: $rouge;
+}
+
+
+.lehaut {
+    background-color: $rose-clair;
+}
+.lemenu {
+    background-color: $gris-fonce;
+    font-family: rift-soft, sans-serif;
+    font-size: 24px;
+    li {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+    @media (max-width: 992px) {
+        li {
+                padding-right: 0;
+                padding-left: 0;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }
+    }
+    .navbar-nav .nav-link {
+        color: $menu-ecriture;
+        padding: 0;
+        border-bottom: 2px solid transparent;
+        position: relative;
+
+        &:before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            height: 2px;
+            width: 0%;
+            transition: $timing;
+            background-color: transparent;
+        }
+        @media (max-width: 992px) {
+            &:before {
+                display: none;
+            }
+        }
+
+        &:hover:before {
+            left: 0;
+            width: 100%;
+            background-color: $rouge;
+        }
+    }
+}
+.navbar-toggler {
+    color: rgba(255, 255, 255, 1);
+    border-color: rgba(255, 255, 255, 1);
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.lepied {
+    background-color: $rose-clair;
+    color: $rouge;
+    font-size: 0.85em;
+    a {
+        color: $rouge;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+h1 {
+    color: #333;
+}
+.pendu-image {
+    margin: 20px auto;
+    width: 300px;
+    height: 300px;
+    background-image: url('img/sprite_0.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.word {
+    margin: 20px auto;
+    font-size: 24px;
+    letter-spacing: 10px;
+}
+.letters {
+    margin: 20px auto;
+    font-size: 18px;
+    letter-spacing: 5px;
+}
+.attempts {
+    margin: 20px auto;
+    font-size: 18px;
+}
+.message {
+    margin: 20px auto;
+    font-size: 18px;
+}
+
+.letters {
+    display: none;
+}
+
+.nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+}
