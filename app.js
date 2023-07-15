@@ -2,10 +2,10 @@
 // Liste des mots à deviner
 let words = [
     "pendu",
-    // "javascript",
-    // "programmation",
-    // "ordinateur",
-    "openai"
+    "chat",
+    "soleil",
+    "livre",
+    "chien"
 ];
 
 // Mot à deviner
