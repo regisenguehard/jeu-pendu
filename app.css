@@ -12367,6 +12367,14 @@ h1, .h1 {
   background-repeat: no-repeat;
 }
 
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
 .word {
   margin: 20px auto;
   font-size: 24px;
@@ -12379,12 +12387,19 @@ h1, .h1 {
   letter-spacing: 5px;
 }
 
+.letter-buttons {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .attempts {
   margin: 20px auto;
   font-size: 18px;
 }
 
 .message {
+  max-width: 500px;
   margin: 20px auto;
   font-size: 18px;
 }
@@ -12393,7 +12408,66 @@ h1, .h1 {
   display: none;
 }
 
+.animated {
+  display: inline-block;
+  animation: bounce 1s 1;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
+}
+
+.level {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.level > * {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.form-select {
+  border-color: #222;
+  border-radius: 0;
+  color: #222;
+  display: inline-block;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.form-select:focus {
+  border-color: rgb(245, 54, 3);
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(245, 54, 3, 0.25);
+}
+
+.btn-primary {
+  background-color: #f53603;
+  border-color: #f53603;
+  border-radius: 0;
+  text-transform: uppercase;
 }/*# sourceMappingURL=app.css.map */
