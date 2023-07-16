@@ -64,6 +64,27 @@ a {
     display: block;
     padding-top: 0;
     padding-bottom: 0;
+    position: relative;
+}
+#toggleSound {
+    position: absolute;
+    z-index: 250;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-repeat: no-repeat;
+    background-image: url('img/3643732-mute-sound-speaker-voice-volume_113439.svg');
+    width: 24px;
+    height: 24px;
+    border: none;
+    padding: 8px;
+    background-position: center center;
+    background-color: transparent;
+    transition: $timing;
+    cursor: pointer;
+}
+#toggleSound.muted {
+    background-image: url('img/3643734-high-sound-speaker-voice-volume_113403.svg');
 }
 .navbar-brand {
     display: block;
