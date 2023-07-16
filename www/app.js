@@ -81,17 +81,17 @@ function updateWordDisplay(tryLetter = null) {
     document.querySelector(".word").innerHTML = wordDisplay;
 }
 
-// Fonction pour mettre à jour l'affichage des lettres devinées
+// Mettre à jour l'affichage des lettres devinées
 function updateGuessedLettersDisplay() {
       document.querySelector(".letters").textContent = "Lettres devinées : " + guessedLetters.join(", ");
 }
 
-// Fonction pour mettre à jour l'affichage du nombre de tentatives restantes
+// Mettre à jour l'affichage du nombre de tentatives restantes
 function updateRemainingAttemptsDisplay() {
     document.querySelector(".attempts").textContent = "Tentatives restantes : " + remainingAttempts;
 }
 
-// Fonction pour mettre à jour l'affichage de l'image du pendu
+// Mettre à jour l'affichage de l'image du pendu
 function updatePenduImage() {
     let difficulty = document.getElementById("difficulty");
     if (difficulty.value) {
@@ -103,13 +103,22 @@ function updatePenduImage() {
     }
 }
 
-// Fonction pour vérifier si le joueur a gagné
+/**
+ * Check if the player has won.
+ * 
+ * @returns {boolean} True if the player has won, false otherwise.
+ */
 function checkWin() {
+    // Iterate through each letter in the selected word
     for (let i = 0; i < selectedWord.length; i++) {
+        // If the guessed letters does not contain the current letter,
+        // the player has not won yet
         if (guessedLetters.indexOf(selectedWord[i]) === -1) {
             return false;
         }
     }
+    // If all letters in the selected word have been guessed,
+    // the player has won
     return true;
 }
 
@@ -146,8 +155,10 @@ function handleLetterClick(letter) {
     }
 }
 
+// Affiche le score
 const scoreTarget = document.getElementById('score');
 
+// Enregistre dans lle navigateur le score
 let score = localStorage.getItem('score') || 0;
 scoreTarget.textContent = "Score : " + score;
 
@@ -168,7 +179,6 @@ function toggleSound() {
 
 // Ajouter un écouteur d'événement au bouton pour activer/désactiver le son au clic
 toggleButton.addEventListener('click', toggleSound);
-
 
 function playSound(target) {
     if (isSoundEnabled) {
@@ -217,13 +227,12 @@ function disableLetterButtons() {
 // Gestion des clics sur les lettres
 let letterButtons = document.querySelectorAll(".letter-buttons button");
 
-
+// Service Worker
 if ('serviceWorker' in navigator) {
-    console.log('lll');
     navigator.serviceWorker.register('/sw.js', { scope: '/' })
-      .then(function(registration) {
-      })
-      .catch(function(e) {
+    .then(function(registration) {
+    })
+    .catch(function(e) {
         console.error('Error during service worker registration:', e);
-      });
-  }
+    });
+}
