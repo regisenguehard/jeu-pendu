@@ -12061,7 +12061,7 @@ h6,
 }
 
 h1, .h1 {
-  font-size: 60px;
+  font-size: 50px;
   margin-bottom: 0;
 }
 
@@ -12117,9 +12117,13 @@ a:hover {
   background-image: url("img/3643734-high-sound-speaker-voice-volume_113403.svg");
 }
 
+#score {
+  color: #ffffff;
+}
+
 .navbar-brand {
   display: block;
-  font-size: 60px;
+  font-size: 50px;
   color: #F53603;
   text-align: center;
   margin-right: 0;

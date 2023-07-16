@@ -38,7 +38,7 @@ h6 {
     font-family: rift-soft, sans-serif;
 }
 h1 {
-    font-size: 60px;
+    font-size: 50px;
     margin-bottom: 0;
 }
 h1.contact {
@@ -86,9 +86,12 @@ a {
 #toggleSound.muted {
     background-image: url('img/3643734-high-sound-speaker-voice-volume_113403.svg');
 }
+#score {
+    color: $menu-ecriture;
+}
 .navbar-brand {
     display: block;
-    font-size: 60px;
+    font-size: 50px;
     color: $rouge;
     text-align: center;
     margin-right: 0;

@@ -24,7 +24,6 @@ let guessedWords = [];
 
 let rejouer = '<div><a onclick="startGame()" class="btn btn-primary">Rejouer</a></div>';
 
-
 // Fonction pour choisir un mot aléatoire en fonction du niveau de difficulté
 function selectWord(difficulty) {
     arr = wordList[difficulty];
@@ -137,6 +136,8 @@ function handleLetterClick(letter) {
         if (checkWin()) {
             showMessage('<div class="animated alert alert-success mb-3">Félicitations, vous avez gagné !</div>' + rejouer);
             disableLetterButtons();
+            score++;
+            document.getElementById('score').textContent = "Score : " + score;
             playSound('winSound');
         } else if (remainingAttempts <= 0) {
             showMessage('<div class="animated alert alert-warning mb-3">Dommage, vous avez perdu.<br>Le mot était : <strong>' + selectedWord + '</strong></div>' + rejouer);
@@ -148,6 +149,8 @@ function handleLetterClick(letter) {
 
 
 
+let score = localStorage.getItem('score') || 0;
+console.log(score);
 
 let toggleButton = document.getElementById('toggleSound');
 let isSoundEnabled = localStorage.getItem('soundEnabled') === 'true';
@@ -185,7 +188,7 @@ function createLetterButtons() {
         let letter = alphabet[i];
         let button = document.createElement("button");
         button.textContent = letter;
-        button.classList.add("btn", "btn-secondary", "mb-1", "mx-1", letter.toLowerCase());
+        button.classList.add("btn", "btn-secondary", "mb-1", "mx-1", "btn-sm", letter.toLowerCase());
         button.addEventListener("click", function() {
             handleLetterClick(this.textContent);
         });
