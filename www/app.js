@@ -10,22 +10,40 @@ let wordList = {
 // Mot à deviner
 let selectedWord;
 
-// Nombre de tentatives restantes
+// Nombre de tentatives totales
 let remainingAttemptsTotal = 7;
+
+// Nombre de tentatives restantes
 let remainingAttempts = 7;
 
 // Tableau pour stocker les lettres déjà devinées
 let guessedLetters = [];
 
+// Tableau pour stocker les mots déjà devinées
+let guessedWords = [];
+
 let rejouer = '<div><a onclick="startGame()" class="btn btn-primary">Rejouer</a></div>';
 
 // Fonction pour choisir un mot aléatoire en fonction du niveau de difficulté
 function selectWord(difficulty) {
-    arr = wordList[difficulty]
+    arr = wordList[difficulty];
     let unique = arr.filter((x, i) => arr.indexOf(x) === i);
     let words = unique;
     let word = words[Math.floor(Math.random() * words.length)];
-    console.log(word);
+
+    if (!guessedWords[difficulty]) {
+        console.log('lkkk');
+        guessedWords[difficulty] = [];
+    }
+
+    guessedWords[difficulty].push(word);
+    wordList[difficulty].splice(words.indexOf(word), 1);
+    
+    if (wordList[difficulty].length === 0) {
+        console.log('lll');
+        wordList[difficulty] = guessedWords[difficulty];
+        guessedWords[difficulty] = [];
+    }
     return word;
 }
 
@@ -90,7 +108,7 @@ function updatePenduImage() {
 function checkWin() {
     for (let i = 0; i < selectedWord.length; i++) {
         if (guessedLetters.indexOf(selectedWord[i]) === -1) {
-        return false;
+            return false;
         }
     }
     return true;
@@ -118,12 +136,19 @@ function handleLetterClick(letter) {
         if (checkWin()) {
             showMessage('<div class="animated alert alert-success mb-3">Félicitations, vous avez gagné !</div>' + rejouer);
             disableLetterButtons();
+            playSound('winSound');
         } else if (remainingAttempts <= 0) {
             showMessage('<div class="animated alert alert-warning mb-3">Dommage, vous avez perdu.<br>Le mot était : <strong>' + selectedWord + '</strong></div>' + rejouer);
             disableLetterButtons();
+            playSound('lostSound');
         }
     }
 }
+
+function playSound(target) {
+    let sound = document.getElementById(target);
+    sound.play();
+  }
 
 // Fonction pour créer les boutons des lettres en fonction du niveau de difficulté
 function createLetterButtons() {
