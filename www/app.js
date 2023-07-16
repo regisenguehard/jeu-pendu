@@ -116,10 +116,10 @@ function handleLetterClick(letter) {
         updateRemainingAttemptsDisplay();
 
         if (checkWin()) {
-            showMessage('<div class="alert alert-success my-3">Félicitations, vous avez gagné !</div>' + rejouer);
+            showMessage('<div class="animated alert alert-success mb-3">Félicitations, vous avez gagné !</div>' + rejouer);
             disableLetterButtons();
         } else if (remainingAttempts <= 0) {
-            showMessage('<div class="alert alert-warning my-3">Dommage, vous avez perdu.<br>Le mot était : <strong>' + selectedWord + '</strong></div>' + rejouer);
+            showMessage('<div class="animated alert alert-warning mb-3">Dommage, vous avez perdu.<br>Le mot était : <strong>' + selectedWord + '</strong></div>' + rejouer);
             disableLetterButtons();
         }
     }
