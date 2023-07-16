@@ -13,6 +13,7 @@ self.addEventListener('install', function(event) {
                 'img/3643734-high-sound-speaker-voice-volume_113403.svg',
                 'img/android-chrome-192x192.png',
                 'img/android-chrome-256x256.png',
+                'img/android-chrome-512x512.png',
                 'img/apple-touch-icon.png',
                 'img/favicon-16x16.png',
                 'img/favicon-32x32.png',
