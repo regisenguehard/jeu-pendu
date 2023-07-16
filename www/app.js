@@ -134,13 +134,13 @@ function handleLetterClick(letter) {
         updateRemainingAttemptsDisplay();
 
         if (checkWin()) {
-            showMessage('<div class="animated alert alert-success mb-3">Félicitations, vous avez gagné !</div>' + rejouer);
+            showMessage('<div class="animated alert alert-success mb-3">Félicitations, vous avez gagné&nbsp;!</div>' + rejouer);
             disableLetterButtons();
             score++;
             document.getElementById('score').textContent = "Score : " + score;
             playSound('winSound');
         } else if (remainingAttempts <= 0) {
-            showMessage('<div class="animated alert alert-warning mb-3">Dommage, vous avez perdu.<br>Le mot était : <strong>' + selectedWord + '</strong></div>' + rejouer);
+            showMessage('<div class="animated alert alert-warning mb-3">Dommage, vous avez perdu.<br>Le mot était&nbsp;: <strong>' + selectedWord + '</strong></div>' + rejouer);
             disableLetterButtons();
             playSound('lostSound');
         }
