@@ -12119,6 +12119,8 @@ a:hover {
 
 #score {
   color: #ffffff;
+  margin-bottom: 0;
+  padding-bottom: 0.5rem;
 }
 
 .navbar-brand {

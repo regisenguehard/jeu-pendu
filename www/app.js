@@ -40,7 +40,6 @@ function selectWord(difficulty) {
     wordList[difficulty].splice(words.indexOf(word), 1);
     
     if (wordList[difficulty].length === 0) {
-        console.log('lll');
         wordList[difficulty] = guessedWords[difficulty];
         guessedWords[difficulty] = [];
     }
