@@ -12061,7 +12061,8 @@ h6,
 }
 
 h1, .h1 {
-  font-size: 90px;
+  font-size: 60px;
+  margin-bottom: 0;
 }
 
 h1.contact, .contact.h1 {
@@ -12093,7 +12094,7 @@ a:hover {
 
 .navbar-brand {
   display: block;
-  font-size: 90px;
+  font-size: 60px;
   color: #F53603;
   text-align: center;
 }
@@ -12346,6 +12347,7 @@ textarea.form-control.hxxx {
   background-color: #FFF4F1;
   color: #F53603;
   font-size: 0.85em;
+  margin-top: 1rem;
 }
 .lepied a {
   color: #F53603;
@@ -12404,6 +12406,7 @@ h1, .h1 {
   font-size: 18px;
 }
 
+.attempts,
 .letters {
   display: none;
 }
@@ -12443,6 +12446,15 @@ h1, .h1 {
   align-items: center;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+}
+@media screen and (max-width: 480px) {
+  .level {
+    flex-wrap: wrap;
+  }
+  .level label {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
 }
 
 .level > * {
