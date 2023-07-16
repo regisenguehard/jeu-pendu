@@ -137,7 +137,7 @@ function handleLetterClick(letter) {
             showMessage('<div class="animated alert alert-success mb-3">Félicitations, vous avez gagné&nbsp;!</div>' + rejouer);
             disableLetterButtons();
             score++;
-            document.getElementById('score').textContent = "Score : " + score;
+            scoreTarget.textContent = "Score : " + score;
             playSound('winSound');
         } else if (remainingAttempts <= 0) {
             showMessage('<div class="animated alert alert-warning mb-3">Dommage, vous avez perdu.<br>Le mot était&nbsp;: <strong>' + selectedWord + '</strong></div>' + rejouer);
@@ -147,10 +147,10 @@ function handleLetterClick(letter) {
     }
 }
 
-
+const scoreTarget = document.getElementById('score');
 
 let score = localStorage.getItem('score') || 0;
-console.log(score);
+scoreTarget.textContent = "Score : " + score;
 
 let toggleButton = document.getElementById('toggleSound');
 let isSoundEnabled = localStorage.getItem('soundEnabled') === 'true';
@@ -217,8 +217,16 @@ function disableLetterButtons() {
 
 // Gestion des clics sur les lettres
 let letterButtons = document.querySelectorAll(".letter-buttons button");
-// for (let i = 0; i < letterButtons.length; i++) {
-//     letterButtons[i].addEventListener("click", function() {
-//         handleLetterClick(this.textContent.toLowerCase());
-//     });
-// }
+
+
+if ('serviceWorker' in navigator) {
+    console.log('lll');
+    navigator.serviceWorker.register('/sw.js', { scope: '/' })
+      .then(function(registration) {
+        // registration worked
+        console.log('Registration succeeded. Scope is ' + registration.scope);
+      })
+      .catch(function(e) {
+        console.error('Error during service worker registration:', e);
+      });
+  }
