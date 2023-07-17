@@ -29,3 +29,9 @@ Le but du jeu est de deviner un mot secret en proposant des lettres une par une,
 
 - Sounds : https://mixkit.co/terms/
 - Icons : https://icon-icons.com/users/NXDGlLPTpYrqHz13UzsZ4/icon-sets/
+
+## TODO list
+
+- Ajouter une page crédit
+- Ajouter une page ML
+- Ajouter le copyright
