@@ -71,6 +71,9 @@ function updateWordDisplay(tryLetter = null) {
         if (guessedLetters.indexOf(letter) !== -1) {
             if (letter === tryLetter) {
                 wordDisplay += '<span class="animated">' + letter + "</span>";
+                if ("vibrate" in navigator) {
+                    navigator.vibrate(500);
+                }
             } else {
                 wordDisplay += "<span>" + letter + "</span>";
             }
