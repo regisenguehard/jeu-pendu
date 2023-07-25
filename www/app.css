@@ -12117,6 +12117,28 @@ a:hover {
   background-image: url("img/3643734-high-sound-speaker-voice-volume_113403.svg");
 }
 
+#genre {
+  position: absolute;
+  z-index: 250;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-repeat: no-repeat;
+  background-image: url("img/homme/7.svg");
+  width: 24px;
+  height: 24px;
+  border: none;
+  padding: 8px;
+  background-position: center center;
+  background-color: transparent;
+  transition: 150ms;
+  cursor: pointer;
+}
+
+#genre.femme {
+  background-image: url("img/femme/7.svg");
+}
+
 #score {
   color: #ffffff;
   margin-bottom: 0;
@@ -12405,7 +12427,6 @@ h1, .h1 {
   margin: 20px auto;
   max-width: 100%;
   width: 300px;
-  background-image: url("img/sprite_0.png");
   background-size: contain;
   background-repeat: no-repeat;
   transition: 1000ms;
