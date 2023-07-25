@@ -99,7 +99,7 @@ function updatePenduImage() {
     let difficulty = document.getElementById("difficulty");
     if (difficulty.value) {
         let hangmapenduImage = document.querySelector(".pendu-image");
-        hangmapenduImage.style.backgroundImage = "url('img/sprite_" + (remainingAttemptsTotal - remainingAttempts) + ".png')";
+        hangmapenduImage.style.backgroundImage = "url('img/" + genre + "/" + (remainingAttemptsTotal - remainingAttempts) + ".svg')";
         hangmapenduImage.classList.add('show');
     } else {
         hangmapenduImage.classList.add('hide');
@@ -165,6 +165,30 @@ const scoreTarget = document.getElementById('score');
 let score = localStorage.getItem('score') || 0;
 scoreTarget.textContent = "Score : " + score;
 
+// homme / femme
+const genreButton = document.getElementById('genre');
+let genre = localStorage.getItem('genre') || 'homme';
+genreButton.classList.add(genre);
+
+function toggleGenre() {
+    console.log('genre' + genre);
+    if (genre == 'homme') {
+        genre = 'femme';
+    } else {
+        genre = 'homme';
+    }
+    toggleButton.classList.toggle("muted", isSoundEnabled);
+    genreButton.removeAttribute('class');
+    genreButton.classList.add(genre);
+
+    updatePenduImage();
+
+    // Mémoriser l'état du son dans le localStorage
+    localStorage.setItem('genre', genre);
+}
+genreButton.addEventListener('click', toggleGenre);
+
+// Gestion du son
 let toggleButton = document.getElementById('toggleSound');
 let isSoundEnabled = localStorage.getItem('soundEnabled') === 'true';
 if (isSoundEnabled) {
