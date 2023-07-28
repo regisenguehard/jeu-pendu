@@ -2,7 +2,7 @@
 // Service worker pour la mise en cache et l'accès hors ligne
 self.addEventListener('install', function(event) {
     event.waitUntil(
-        caches.open('pendu-v2.1').then(function(cache) {
+        caches.open('pendu-v2.2').then(function(cache) {
             return cache.addAll([
                 'index.html',
                 'app.css',
@@ -20,14 +20,24 @@ self.addEventListener('install', function(event) {
                 'img/favicon.ico',
                 'img/mstile-150x150.png',
                 'img/safari-pinned-tab.svg',
-                'img/sprite_0.png',
-                'img/sprite_1.png',
-                'img/sprite_2.png',
-                'img/sprite_3.png',
-                'img/sprite_4.png',
-                'img/sprite_5.png',
-                'img/sprite_6.png',
-                'img/sprite_7.png',
+                'img/homme/0.svg',
+                'img/homme/1.svg',
+                'img/homme/2.svg',
+                'img/homme/3.svg',
+                'img/homme/4.svg',
+                'img/homme/5.svg',
+                'img/homme/6.svg',
+                'img/homme/7.svg',
+                'img/homme/x.svg',
+                'img/femme/0.svg',
+                'img/femme/1.svg',
+                'img/femme/2.svg',
+                'img/femme/3.svg',
+                'img/femme/4.svg',
+                'img/femme/5.svg',
+                'img/femme/6.svg',
+                'img/femme/7.svg',
+                'img/femme/x.svg',
             ]);
         })
     );

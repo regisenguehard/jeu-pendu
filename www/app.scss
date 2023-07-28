@@ -89,11 +89,11 @@ a {
 #genre {
     position: absolute;
     z-index: 250;
-    right: 24px;
+    right: 36px;
     top: 50%;
     transform: translateY(-50%);
     background-repeat: no-repeat;
-    background-image: url('img/homme/7.svg');
+    background-image: url('img/homme/x.svg');
     width: 24px;
     height: 24px;
     border: none;
@@ -104,7 +104,7 @@ a {
     cursor: pointer;
 }
 #genre.femme {
-    background-image: url('img/femme/7.svg');
+    background-image: url('img/femme/x.svg');
 }
 #score {
     color: $menu-ecriture;
