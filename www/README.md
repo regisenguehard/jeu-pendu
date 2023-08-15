@@ -36,3 +36,4 @@ Le but du jeu est de deviner un mot secret en proposant des lettres une par une,
 - Ajouter une page crédit
 - Ajouter une page ML
 - Ajouter le copyright
+- Déplacer `node_modules` & package.json & mettre à jour scss
