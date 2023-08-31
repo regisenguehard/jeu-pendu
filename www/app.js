@@ -32,7 +32,6 @@ function selectWord(difficulty) {
     let word = words[Math.floor(Math.random() * words.length)];
 
     if (!guessedWords[difficulty]) {
-        console.log('lkkk');
         guessedWords[difficulty] = [];
     }
 
@@ -71,11 +70,11 @@ function updateWordDisplay(tryLetter = null) {
         if (guessedLetters.indexOf(letter) !== -1) {
             if (letter === tryLetter) {
                 wordDisplay += '<span class="animated">' + letter + "</span>";
-                if ("vibrate" in navigator) {
-                    navigator.vibrate(500);
-                }
             } else {
                 wordDisplay += "<span>" + letter + "</span>";
+                if (isSoundEnabled && "vibrate" in navigator) {
+                    navigator.vibrate(100);
+                }
             }
         } else {
             wordDisplay += "<span>_</span>";
@@ -137,7 +136,7 @@ function handleLetterClick(letter) {
         } else {
             // console.log('non');
         }
-        let  lettre = document.querySelector('button.'+letter);
+        let  lettre = document.querySelector('button.letter-'+letter);
         // lettre.style.visibility = 'hidden';
         lettre.classList.add('disabled');
         updateWordDisplay(letter);
@@ -171,7 +170,7 @@ let genre = localStorage.getItem('genre') || 'homme';
 genreButton.classList.add(genre);
 
 function toggleGenre() {
-    console.log('genre' + genre);
+    // console.log('genre : ' + genre);
     if (genre == 'homme') {
         genre = 'femme';
     } else {
@@ -224,7 +223,7 @@ function createLetterButtons() {
         let letter = alphabet[i];
         let button = document.createElement("button");
         button.textContent = letter;
-        button.classList.add("btn", "btn-secondary", "mb-1", "mx-1", "btn-sm", letter.toLowerCase());
+        button.classList.add("btn", "btn-secondary", "mb-1", "mx-1", "btn-sm", 'letter', 'letter-'+letter.toLowerCase());
         button.addEventListener("click", function() {
             handleLetterClick(this.textContent);
         });

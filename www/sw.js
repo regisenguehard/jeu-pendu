@@ -2,7 +2,7 @@
 // Service worker pour la mise en cache et l'accès hors ligne
 self.addEventListener('install', function(event) {
     event.waitUntil(
-        caches.open('pendu-v2.2').then(function(cache) {
+        caches.open('pendu-v2.3').then(function(cache) {
             return cache.addAll([
                 'index.html',
                 'app.css',
@@ -42,7 +42,7 @@ self.addEventListener('install', function(event) {
         })
     );
 });
-    
+
 self.addEventListener('fetch', function(event) {
     event.respondWith(
         caches.match(event.request).then(function(response) {

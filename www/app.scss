@@ -93,7 +93,7 @@ a {
     top: 50%;
     transform: translateY(-50%);
     background-repeat: no-repeat;
-    background-image: url('img/homme/x.svg');
+    background-image: url('img/femme/x.svg');
     width: 24px;
     height: 24px;
     border: none;
@@ -104,7 +104,7 @@ a {
     cursor: pointer;
 }
 #genre.femme {
-    background-image: url('img/femme/x.svg');
+    background-image: url('img/homme/x.svg');
 }
 #score {
     color: $menu-ecriture;
@@ -341,6 +341,7 @@ textarea.form-control.hxxx {
 html,
 body {
     min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -349,7 +350,7 @@ body {
     background-color: $rose-clair;
     color: $rouge;
     font-size: 0.85em;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     a {
         color: $fondCouleur;
         &:hover {
@@ -362,7 +363,7 @@ h1 {
     color: #333;
 }
 .pendu-image {
-    margin: 20px auto;
+    margin: 12px auto;
     max-width: 100%;
     width: 300px;
     background-size: contain;
@@ -379,8 +380,8 @@ h1 {
 }
 .word {
     margin: 20px auto;
-    font-size: 24px;
-    letter-spacing: 10px;
+    font-size: 22px;
+    letter-spacing: 6px;
 }
 .letters {
     margin: 20px auto;
@@ -388,9 +389,13 @@ h1 {
     letter-spacing: 5px;
 }
 .letter-buttons {
-    max-width: 500px;
+    max-width: 410px;
     margin-left: auto;
     margin-right: auto;
+}
+.letter-buttons .letter {
+    min-width: 25px;
+    text-align: center;
 }
 .attempts {
     margin: 20px auto;
